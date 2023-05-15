@@ -1,3 +1,4 @@
+import {useGetVideo} from '@/hooks/useVideo';
 import {colors} from '@/styles/colors';
 import {SectionBlock, SectionLabel} from '@/styles/section.styles';
 import React from 'react';
@@ -9,8 +10,11 @@ import {
   Section2Text,
   Section2Title,
 } from './Section2.styles';
+import VimeoPlayer from './VimeoPlayer';
 
 const Section2 = ({isDesktop}: IsDesktop) => {
+  const {data: video} = useGetVideo();
+
   return (
     <Section2Container isDesktop={isDesktop}>
       <SectionBlock isDesktop={isDesktop}>
@@ -31,19 +35,7 @@ const Section2 = ({isDesktop}: IsDesktop) => {
           }
         </Section2Text>
 
-        <iframe
-          width="100%"
-          height={isDesktop ? 594 : 192}
-          src="https://www.youtube.com/embed/fxgElZMAgWQ"
-          title="YouTube video player"
-          frameBorder={0}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-          style={{
-            marginBottom: isDesktop ? 64 : 32,
-            borderRadius: isDesktop ? 20 : 12,
-          }}
-        />
+        {video && <VimeoPlayer isDesktop={isDesktop} url={video.url} />}
 
         <CommentForm isDesktop={isDesktop} />
         <CheeringMessagePagination isDesktop={isDesktop} />
