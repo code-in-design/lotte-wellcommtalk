@@ -1,85 +1,52 @@
 import {colors} from '@/styles/colors';
+import {SectionBlock} from '@/styles/section.styles';
 import {css} from '@emotion/react';
 import styled from '@emotion/styled';
 
 export const Section3Container = styled.div`
-  background: ${colors.BLUE};
+  background: ${colors.PINK};
 `;
 
-export const HintText = styled.p<IsDesktop>`
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 26px;
-  text-align: center;
-  letter-spacing: -0.3px;
-  color: ${colors.WHITE};
-
-  ${({isDesktop}) =>
-    isDesktop &&
-    css`
-      font-size: 28px;
-      line-height: 38px;
-      letter-spacing: -0.5px;
-    `}
-`;
-
-export const Vision = styled.div<IsDesktop>`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 32px 20px;
-  gap: 12px;
-
-  width: 100%;
-
-  margin-top: 24px;
-  margin-bottom: 48px;
-
-  background: ${colors.SUB_COLOR_01};
-  border-radius: 20px;
-
-  ${({isDesktop}) =>
-    isDesktop &&
-    css`
-      padding: 40px 80px;
-      gap: 20px;
-
-      margin-top: 40px;
-      margin-bottom: 80px;
-    `}
-`;
-
-export const VisionText = styled.p<IsDesktop>`
+export const Section3Text = styled.p<IsDesktop>`
   white-space: pre-wrap;
-
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 26px;
+  font-size: 24px;
+  line-height: 32px;
   text-align: center;
-  letter-spacing: -0.3px;
+  letter-spacing: -0.4px;
+
+  b {
+    position: relative;
+    font-weight: 800;
+
+    img {
+      position: absolute;
+      top: 2px;
+      right: -24px;
+    }
+  }
 
   ${({isDesktop}) =>
     isDesktop &&
     css`
-      font-size: 32px;
-      line-height: 42px;
-      letter-spacing: -0.5px;
+      white-space: unset;
+
+      font-size: 42px;
+      line-height: 64px;
+      letter-spacing: -0.6px;
+
+      b {
+        img {
+          position: absolute;
+          right: -48px;
+        }
+      }
     `}
 `;
 
-export const VisionSubText = styled.p<IsDesktop>`
-  white-space: pre-wrap;
-
-  font-size: 14px;
-  line-height: 20px;
-  text-align: center;
-  letter-spacing: -0.2px;
-
+export const Section3Block = styled(SectionBlock)`
   ${({isDesktop}) =>
     isDesktop &&
     css`
-      font-size: 21px;
-      line-height: 28px;
-      letter-spacing: -0.4px;
+      width: 1233px;
     `}
 `;

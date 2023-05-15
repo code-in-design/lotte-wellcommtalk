@@ -7,10 +7,7 @@ import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 import {ReactQueryDevtools} from '@tanstack/react-query-devtools';
 
 import {RecoilEnv, RecoilRoot} from 'recoil';
-import Modal from 'react-modal';
-import Modals from '@/components/Modals/Modals';
 
-Modal.setAppElement('#__next');
 if (process.env.NODE_ENV === 'development') {
   RecoilEnv.RECOIL_DUPLICATE_ATOM_KEY_CHECKING_ENABLED = false;
 }
@@ -38,7 +35,6 @@ export default function App({Component, pageProps}: AppProps<IsDesktop>) {
           <AppLayout isDesktop={pageProps.isDesktop}>
             <Component {...pageProps} />
 
-            <Modals />
             <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
           </AppLayout>
         </RecoilRoot>
@@ -47,8 +43,12 @@ export default function App({Component, pageProps}: AppProps<IsDesktop>) {
   );
 }
 
-App.getInitialProps = async ({ctx}: AppContext): Promise<AppInitialProps<IsDesktop>> => {
-  const userAgent = ctx.req?.headers['user-agent'] ? ctx.req.headers['user-agent'] : navigator.userAgent;
+App.getInitialProps = async ({
+  ctx,
+}: AppContext): Promise<AppInitialProps<IsDesktop>> => {
+  const userAgent = ctx.req?.headers['user-agent']
+    ? ctx.req.headers['user-agent']
+    : navigator.userAgent;
   const isMobile = /(iPad|iPhone|Android|Mobile)/i.test(userAgent) || false;
 
   return {pageProps: {isDesktop: !isMobile}};

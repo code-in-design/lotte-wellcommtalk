@@ -12,7 +12,7 @@ import {
   useDeleteComment,
   useGetComments,
   useGetCommentCount,
-} from '@/hooks/useCommentMessage';
+} from '@/hooks/useComments';
 import dayjs from 'dayjs';
 import 'dayjs/locale/ko';
 import {formatDate} from '@/common/utils/formatDate';

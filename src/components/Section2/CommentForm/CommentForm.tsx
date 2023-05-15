@@ -1,7 +1,7 @@
 import {userState} from '@/atoms/user';
 import ErrorMessage from '@/components/ErrorMessage';
 import LoadingIndicator from '@/components/LoadingIndicator';
-import {useCreateComment} from '@/hooks/useCommentMessage';
+import {useCreateComment} from '@/hooks/useComments';
 import React, {useCallback} from 'react';
 import {SubmitHandler, useForm} from 'react-hook-form';
 import {useRecoilValue} from 'recoil';
