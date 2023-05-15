@@ -1,4 +1,5 @@
 import {colors} from '@/styles/colors';
+import {SectionBlock} from '@/styles/section.styles';
 import {css} from '@emotion/react';
 import styled from '@emotion/styled';
 
@@ -27,7 +28,7 @@ export const Section10Text = styled.p<IsDesktop>`
   ${({isDesktop}) =>
     isDesktop &&
     css`
-      white-space: nowrap;
+      white-space: unset;
 
       font-size: 42px;
       line-height: 64px;
@@ -39,5 +40,13 @@ export const Section10Text = styled.p<IsDesktop>`
           right: -48px;
         }
       }
+    `}
+`;
+
+export const LastSectionBlock = styled(SectionBlock)`
+  ${({isDesktop}) =>
+    isDesktop &&
+    css`
+      width: 1233px;
     `}
 `;
