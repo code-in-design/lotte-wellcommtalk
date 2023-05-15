@@ -115,3 +115,30 @@ export const ConsonantBlock = styled.div`
   letter-spacing: -0.5px;
   color: ${colors.WHITE};
 `;
+
+export const Section2Button = styled.button<IsDesktop>`
+  width: 100%;
+  padding: 12px 0;
+  background-color: ${colors.MAIN_COLOR};
+  border-radius: 8px;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.3px;
+  color: ${colors.WHITE};
+
+  margin-top: 32px;
+
+  ${({isDesktop}) =>
+    isDesktop &&
+    css`
+      padding: 19px 0;
+
+      font-size: 18px;
+      line-height: 26px;
+      letter-spacing: -0.3px;
+
+      margin-top: 64px;
+    `};
+`;

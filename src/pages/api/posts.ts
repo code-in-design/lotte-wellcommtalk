@@ -1,6 +1,6 @@
 import type {NextApiRequest, NextApiResponse} from 'next';
 import {firestoreAdmin} from '@/lib/firebaseAdmin';
-import {CheeringMessage} from '@/api/cheeringMessage/cheeringMessage.types';
+import {IComment} from '@/api/comment/comment.types';
 
 type PageQuery = {
   offset: string;
@@ -34,7 +34,7 @@ export default async function handler(
   const data = querySnapshot.docs.map(doc => ({
     id: doc.id,
     ...doc.data(),
-  })) as CheeringMessage[];
+  })) as IComment[];
 
   res.status(200).json(data);
 }

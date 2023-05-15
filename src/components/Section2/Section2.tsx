@@ -1,11 +1,10 @@
 import {colors} from '@/styles/colors';
 import {SectionBlock, SectionLabel} from '@/styles/section.styles';
 import React from 'react';
-import QuizForm from './QuizForm/QuizForm';
+import CommentForm from './CommentForm/CommentForm';
+import CheeringMessagePagination from './CommentPagination/CommentPagination';
 import {
-  ConsonantBlock,
-  ConsonantContainer,
-  QuizBlock,
+  Section2Button,
   Section2Container,
   Section2Text,
   Section2Title,
@@ -19,16 +18,16 @@ const Section2 = ({isDesktop}: IsDesktop) => {
           backgroundColor={colors.BLACK}
           color={colors.WHITE}
           isDesktop={isDesktop}>
-          EVENT 01
+          웰컴 톡 1회
         </SectionLabel>
 
         <Section2Title isDesktop={isDesktop}>
-          {'영상을 시청하고,\n빈칸을 채워주세요!'}
+          제 1회 웰컴 톡을 공유합니다!
         </Section2Title>
 
         <Section2Text isDesktop={isDesktop}>
           {
-            '유아부터 실버세대까지 전 연령층의 식문화 동반자,\n롯데웰푸드와 함께 해볼까요?'
+            '웰컴톡에서 나누고 싶은 주제/소식과 더불어\n개선/제안 의견은 댓글을 통해 남겨주시기 바랍니다!'
           }
         </Section2Text>
 
@@ -46,38 +45,12 @@ const Section2 = ({isDesktop}: IsDesktop) => {
           }}
         />
 
-        <QuizBlock isDesktop={isDesktop}>
-          {isDesktop ? (
-            <>
-              <ConsonantContainer>
-                <p>행복, 건강, 그리고</p>
-                <ConsonantBlock>ㅇ</ConsonantBlock>
-                <ConsonantBlock>ㄴ</ConsonantBlock>
-                <ConsonantBlock>ㅅ</ConsonantBlock>
-                <p>로</p>
-              </ConsonantContainer>
-              <p>
-                인류의 <b>WELL LIFE</b>에 기여하는 글로벌 종합 식품 기업
-              </p>
-            </>
-          ) : (
-            <>
-              <p>행복, 건강, 그리고</p>
-              <ConsonantContainer>
-                <ConsonantBlock>ㅇ</ConsonantBlock>
-                <ConsonantBlock>ㄴ</ConsonantBlock>
-                <ConsonantBlock>ㅅ</ConsonantBlock>
-                <p>로</p>
-              </ConsonantContainer>
-              <p>
-                인류의 <b>WELL LIFE</b>에 기여하는
-              </p>
-              <p>글로벌 종합 식품 기업</p>
-            </>
-          )}
-        </QuizBlock>
+        <CommentForm isDesktop={isDesktop} />
+        <CheeringMessagePagination isDesktop={isDesktop} />
 
-        <QuizForm isDesktop={isDesktop} />
+        <Section2Button isDesktop={isDesktop}>
+          IR 자료 보러가기 (Cilck)
+        </Section2Button>
       </SectionBlock>
     </Section2Container>
   );

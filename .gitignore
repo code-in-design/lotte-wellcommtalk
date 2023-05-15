@@ -39,4 +39,4 @@ next-env.d.ts
 .env.local
 
 # credentials
-credentails.json
+credentials.json

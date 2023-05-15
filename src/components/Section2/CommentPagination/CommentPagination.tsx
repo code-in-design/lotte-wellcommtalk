@@ -7,12 +7,12 @@ import {
   MessageInnerContainerLoading,
   MessageMobileBlock,
   VerticalBar,
-} from './CheeringMessagePagination.styles';
+} from './CommentPagination.styles';
 import {
-  useDeleteCheeringMessage,
-  useGetCheeringMessages,
-  useGetCheeringMessagesCount,
-} from '@/hooks/useCheeringMessage';
+  useDeleteComment,
+  useGetComments,
+  useGetCommentCount,
+} from '@/hooks/useCommentMessage';
 import dayjs from 'dayjs';
 import 'dayjs/locale/ko';
 import {formatDate} from '@/common/utils/formatDate';
@@ -26,17 +26,17 @@ const CheeringMessagePagination = ({isDesktop}: IsDesktop) => {
   const [currentPage, setCurrentPage] = useState(1);
   const user = useRecoilValue(userState);
 
-  const {data, isFetching} = useGetCheeringMessages(currentPage);
+  const {data, isFetching} = useGetComments(currentPage);
   const {
     data: {count},
-  } = useGetCheeringMessagesCount();
+  } = useGetCommentCount();
   const totalPages = useMemo(() => Math.ceil(count / 5), [count]);
 
-  const {mutate: deleteMessage} = useDeleteCheeringMessage(currentPage);
+  const {mutate: deleteMessage} = useDeleteComment(currentPage);
 
   const onRemove = useCallback(
     (messageId: string) => () => {
-      const isConfirm = confirm('응원 메시지를 삭제하시겠습니까?');
+      const isConfirm = confirm('댓글을 삭제하시겠습니까?');
       if (!isConfirm) return;
 
       deleteMessage(messageId);
@@ -59,8 +59,7 @@ const CheeringMessagePagination = ({isDesktop}: IsDesktop) => {
               return (
                 <MessageDesktopBlock key={cheeringMessage.id}>
                   <p>{cheeringMessage.content}</p>
-                  <VerticalBar isDesktop={true} />
-                  <span>{cheeringMessage.user.name}</span>
+
                   <VerticalBar isDesktop={true} />
                   <span>{formatDate(cheeringMessage.createdAt._seconds)}</span>
                   {cheeringMessage.user.id === user.id && (
@@ -79,12 +78,8 @@ const CheeringMessagePagination = ({isDesktop}: IsDesktop) => {
 
             return (
               <MessageMobileBlock key={cheeringMessage.id}>
-                <p>{cheeringMessage.content}</p>
-
                 <div>
-                  <span>{formatDate(cheeringMessage.createdAt._seconds)}</span>
-                  <VerticalBar isDesktop={false} />
-                  <span>{cheeringMessage.user.name}</span>
+                  <p>{cheeringMessage.content}</p>
 
                   {cheeringMessage.user.id === user.id && (
                     <Image
@@ -96,6 +91,10 @@ const CheeringMessagePagination = ({isDesktop}: IsDesktop) => {
                       onClick={onRemove(cheeringMessage.id)}
                     />
                   )}
+                </div>
+
+                <div>
+                  <span>{formatDate(cheeringMessage.createdAt._seconds)}</span>
                 </div>
               </MessageMobileBlock>
             );

@@ -1,17 +1,17 @@
 import {userState} from '@/atoms/user';
 import ErrorMessage from '@/components/ErrorMessage';
 import LoadingIndicator from '@/components/LoadingIndicator';
-import {useCreateCheeringMessage} from '@/hooks/useCheeringMessage';
+import {useCreateComment} from '@/hooks/useCommentMessage';
 import React, {useCallback} from 'react';
 import {SubmitHandler, useForm} from 'react-hook-form';
 import {useRecoilValue} from 'recoil';
-import {CheeringForm} from './CheeringMessageForm.styles';
+import {SCommentForm} from './CommentForm.styles';
 
 export interface CheeringFormValue {
   content: string;
 }
 
-const CheeringMessageFom = ({isDesktop}: IsDesktop) => {
+const CommentForm = ({isDesktop}: IsDesktop) => {
   const user = useRecoilValue(userState);
   const {
     register,
@@ -23,28 +23,25 @@ const CheeringMessageFom = ({isDesktop}: IsDesktop) => {
       content: '',
     },
   });
-  const {mutate: createCheeringMessage, isLoading} =
-    useCreateCheeringMessage(resetField);
+  const {mutate: createComment, isLoading} = useCreateComment(resetField);
 
   const onSubmit: SubmitHandler<CheeringFormValue> = useCallback(
     ({content}) => {
       if (!user || isLoading) return;
 
-      createCheeringMessage({content, user});
+      createComment({content, user});
     },
-    [createCheeringMessage, isLoading, user],
+    [createComment, isLoading, user],
   );
 
   return (
-    <CheeringForm onSubmit={handleSubmit(onSubmit)} isDesktop={isDesktop}>
+    <SCommentForm onSubmit={handleSubmit(onSubmit)} isDesktop={isDesktop}>
       <div>
         <textarea
           {...register('content', {required: true})}
-          placeholder="축하/응원의 메시지를 남겨주세요!"
+          placeholder="댓글 추가"
         />
-        {errors.content && (
-          <ErrorMessage message="축하/응원의 메시지를 남겨주세요!" />
-        )}
+        {errors.content && <ErrorMessage message="댓글을 작성해주세요." />}
       </div>
       <button disabled={isLoading}>
         {isLoading ? (
@@ -53,8 +50,8 @@ const CheeringMessageFom = ({isDesktop}: IsDesktop) => {
           <span>전송</span>
         )}
       </button>
-    </CheeringForm>
+    </SCommentForm>
   );
 };
 
-export default CheeringMessageFom;
+export default CommentForm;
