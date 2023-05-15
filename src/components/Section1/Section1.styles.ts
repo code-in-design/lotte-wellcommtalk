@@ -21,6 +21,7 @@ export const Section1Block = styled.div<IsDesktop>`
   padding-top: 62px;
   padding-bottom: 29.38px;
   margin: 0 auto;
+  padding: 0 16px;
 
   display: flex;
   flex-direction: column;
@@ -47,7 +48,7 @@ export const Section1TitleBox = styled.div<IsDesktop>`
   line-height: 52px;
   letter-spacing: -0.6px;
 
-  margin-bottom: 4px;
+  margin-bottom: 24px;
 
   b {
     font-weight: 800;
@@ -57,7 +58,7 @@ export const Section1TitleBox = styled.div<IsDesktop>`
   ${({isDesktop}) =>
     isDesktop &&
     css`
-      padding-top: 75px;
+      padding-top: 60px;
       font-size: 70px;
       line-height: 88px;
       letter-spacing: -0.9px;
@@ -93,10 +94,7 @@ export const Section1TextBox = styled.div<IsDesktop>`
   line-height: 24px;
   letter-spacing: -0.3px;
   white-space: pre-wrap;
-
-  p:nth-of-type(2) {
-    margin-bottom: 4px;
-  }
+  margin-bottom: 24px;
 
   b {
     font-weight: 700;
@@ -109,10 +107,35 @@ export const Section1TextBox = styled.div<IsDesktop>`
       font-size: 21px;
       line-height: 28px;
       letter-spacing: -0.4px;
-      white-space: nowrap;
+    `}
+`;
 
-      p:nth-of-type(2) {
-        margin-bottom: 12px;
-      }
+export const WellCommBlock = styled.div<IsDesktop>`
+  background: rgba(225, 225, 234, 0.5);
+  border-radius: 12px;
+
+  display: flex;
+  padding: 16px;
+  gap: 16px;
+  align-items: center;
+
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.2px;
+
+  b {
+    font-weight: 800;
+  }
+
+  ${({isDesktop}) =>
+    isDesktop &&
+    css`
+      gap: 12px;
+      white-space: unset;
+      max-width: 515px;
+
+      font-size: 18px;
+      line-height: 26px;
+      letter-spacing: -0.3px;
     `}
 `;
