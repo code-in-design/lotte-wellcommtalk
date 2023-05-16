@@ -116,8 +116,11 @@ export const ConsonantBlock = styled.div`
   color: ${colors.WHITE};
 `;
 
-export const Section2Button = styled.button<IsDesktop>`
-  width: 100%;
+export const Section2Button = styled.a<IsDesktop>`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   padding: 12px 0;
   background-color: ${colors.MAIN_COLOR};
   border-radius: 8px;

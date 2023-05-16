@@ -40,7 +40,9 @@ const Section2 = ({isDesktop}: IsDesktop) => {
         <CommentForm isDesktop={isDesktop} />
         <CheeringMessagePagination isDesktop={isDesktop} />
 
-        <Section2Button isDesktop={isDesktop}>
+        <Section2Button
+          isDesktop={isDesktop}
+          href="https://www.lottewellfood.com/invest/ir ">
           IR 자료 보러가기 (Cilck)
         </Section2Button>
       </SectionBlock>
