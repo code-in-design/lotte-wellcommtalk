@@ -91,7 +91,7 @@ export const Section1SubTitle = styled.div<IsDesktop>`
 export const Section1TextBox = styled.div<IsDesktop>`
   font-weight: 400;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 28px;
   letter-spacing: -0.3px;
   white-space: pre-wrap;
   margin-bottom: 24px;
@@ -105,7 +105,7 @@ export const Section1TextBox = styled.div<IsDesktop>`
     isDesktop &&
     css`
       font-size: 21px;
-      line-height: 28px;
+      line-height: 32px;
       letter-spacing: -0.4px;
     `}
 `;
@@ -120,11 +120,15 @@ export const WellCommBlock = styled.div<IsDesktop>`
   align-items: center;
 
   font-size: 14px;
-  line-height: 20px;
+  line-height: 22px;
   letter-spacing: -0.2px;
 
   b {
     font-weight: 800;
+  }
+
+  @media (min-width: 405px) {
+    white-space: pre-wrap;
   }
 
   ${({isDesktop}) =>
@@ -135,7 +139,7 @@ export const WellCommBlock = styled.div<IsDesktop>`
       max-width: 515px;
 
       font-size: 18px;
-      line-height: 26px;
+      line-height: 28px;
       letter-spacing: -0.3px;
     `}
 `;

@@ -62,8 +62,7 @@ const Sign = ({isLogin, isDesktop}: LoginProps) => {
     <LoginContainer isDesktop={isDesktop}>
       <LoginBlock isDesktop={isDesktop}>
         <TextBlock isDesktop={isDesktop}>
-          <span>{isLogin ? 'Welcome,' : 'Join'}</span>
-          <b>LOTTE WELLFOOD</b>
+          <b>Well Comm. Talk</b>
         </TextBlock>
 
         <form onSubmit={handleSubmit(onSubmit)}>

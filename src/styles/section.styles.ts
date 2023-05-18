@@ -26,7 +26,7 @@ export const SectionLabel = styled.label<SectionLabelProps>`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 6px 16px;
+  padding: 8px 32px;
 
   background: ${({backgroundColor}) => backgroundColor};
   border-radius: 100px;
@@ -43,7 +43,7 @@ export const SectionLabel = styled.label<SectionLabelProps>`
   ${({isDesktop}) =>
     isDesktop &&
     css`
-      padding: 8px 20px;
+      padding: 12px 40px;
       font-size: 28px;
       line-height: 38px;
       letter-spacing: -0.5px;
