@@ -2,7 +2,6 @@
 import Image from 'next/image';
 import React, {useEffect} from 'react';
 import {
-  Section1Background,
   Section1Block,
   Section1Container,
   Section1TextBox,
@@ -17,8 +16,6 @@ const Section1 = ({isDesktop}: IsDesktop) => {
 
   return (
     <Section1Container isDesktop={isDesktop}>
-      <Section1Background isDesktop={isDesktop} />
-
       <Section1Block isDesktop={isDesktop}>
         <Section1TitleBlock isDesktop={isDesktop}>
           Well{'\n'}Comm.

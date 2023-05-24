@@ -3,52 +3,33 @@ import {css} from '@emotion/react';
 import styled from '@emotion/styled';
 
 export const Section1Container = styled.div<IsDesktop>`
-  position: relative;
-  padding-top: 85px;
-  padding-bottom: 90px;
-
-  ${({isDesktop}) =>
-    isDesktop &&
-    css`
-      padding-top: 88px;
-      padding-bottom: 94px;
-    `};
-`;
-
-export const Section1Background = styled.div<IsDesktop>`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 360px;
-  z-index: -1;
-
-  background: url('/assets/images/section1/section1_mobile.png') center;
+  margin-top: -62px;
+  background: url('/assets/images/section1/section1_mobile.png') top;
   background-size: cover;
 
   ${({isDesktop}) =>
     isDesktop &&
     css`
+      margin-top: -82px;
       background: url('/assets/images/section1/section1_desktop.png') center;
       background-size: cover;
-
-      top: 56px;
-      width: 951px;
-      left: calc((${window.innerWidth}px - 951px) / 2);
-      height: 400px;
-    `}
+    `};
 `;
 
 export const Section1Block = styled.div<IsDesktop>`
   width: 343px;
   margin: 0 auto;
+  padding-top: 62px;
 
   display: flex;
   flex-direction: column;
+  padding-bottom: 91px;
 
   ${({isDesktop}) =>
     isDesktop &&
     css`
+      padding-top: 82px;
+      padding-bottom: 94px;
       width: 1056px;
       align-items: center;
     `};
@@ -65,6 +46,7 @@ export const Section1TitleBlock = styled.div<IsDesktop>`
   flex-direction: column;
   justify-content: flex-end;
 
+  margin-top: 65px;
   margin-bottom: 63px;
 
   span {
@@ -75,6 +57,7 @@ export const Section1TitleBlock = styled.div<IsDesktop>`
     isDesktop &&
     css`
       width: 460px;
+      margin-top: 72px;
 
       font-size: 111px;
       line-height: 111px;
