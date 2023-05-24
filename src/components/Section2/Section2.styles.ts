@@ -3,15 +3,24 @@ import {css} from '@emotion/react';
 import styled from '@emotion/styled';
 
 export const Section2Container = styled.div<IsDesktop>`
-  background: url('/assets/images/section2/background_mobile.png') center;
-  background-size: cover;
+  position: relative;
 
   ${({isDesktop}) =>
     isDesktop &&
     css`
-      background: url('/assets/images/section2/background_desktop.png') center;
+      background: url('/assets/images/section2/section2_desktop.png') center;
       background-size: cover;
     `}
+`;
+
+export const Section2Background = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: ${colors.YELLOW2};
+  width: 100%;
+  height: 448px;
 `;
 
 export const Section2Title = styled.h2<IsDesktop>`
@@ -44,7 +53,7 @@ export const Section2Text = styled.p<IsDesktop>`
   letter-spacing: -0.3px;
   white-space: pre-wrap;
 
-  margin-bottom: 32px;
+  margin-bottom: 70px;
 
   ${({isDesktop}) =>
     isDesktop &&

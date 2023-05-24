@@ -5,6 +5,7 @@ import React from 'react';
 import CommentForm from './CommentForm/CommentForm';
 import CheeringMessagePagination from './CommentPagination/CommentPagination';
 import {
+  Section2Background,
   Section2Button,
   Section2Container,
   Section2Text,
@@ -17,6 +18,8 @@ const Section2 = ({isDesktop}: IsDesktop) => {
 
   return (
     <Section2Container isDesktop={isDesktop}>
+      <Section2Background />
+
       <SectionBlock isDesktop={isDesktop}>
         <SectionLabel
           backgroundColor={colors.BLACK}

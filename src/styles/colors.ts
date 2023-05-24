@@ -16,8 +16,11 @@ export const colors = {
 
   /** #EF89C2 */
   PINK: '#EF89C2',
-  /** #EEC584; */
-  YELLOW: '#EEC584;',
+  /** #EEC584 */
+  YELLOW: '#EEC584',
+  /** #FFE27C */
+  YELLOW2: '#FFE27C',
+
   /** #518351 */
   KHAKI: '#518351',
   /** #02394A */
