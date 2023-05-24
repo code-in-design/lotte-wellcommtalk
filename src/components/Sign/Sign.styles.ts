@@ -3,59 +3,71 @@ import {css} from '@emotion/react';
 import styled from '@emotion/styled';
 
 export const LoginContainer = styled.div<IsDesktop>`
-  background: url('/assets/images/login/background_mobile.png') center;
-  background-size: cover;
-
   ${({isDesktop}) =>
     isDesktop &&
     css`
-      background: url('/assets/images/login/background_desktop.png') center;
+      background: url('/assets/images/login/sign_background.png') center;
       background-size: cover;
     `}
 `;
 
-export const LoginBlock = styled.div<IsDesktop>`
+export const SignBlock = styled.div<IsDesktop>`
   width: 343px;
   margin: 0 auto;
 
-  padding-top: 112px;
-  padding-bottom: 229px;
+  display: flex;
+  flex-direction: column;
+  gap: 42.75px;
 
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-  }
+  padding-top: 56px;
+  padding-bottom: 24px;
 
   ${({isDesktop}) =>
     isDesktop &&
     css`
-      width: 542px;
-      padding-top: 100px;
-      padding-bottom: 227px;
+      width: 1056px;
+      margin: 0 auto;
+      height: calc(100vh - 82px);
+
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      padding-top: 0;
+      padding-bottom: 82px;
     `}
 `;
 
-export const TextBlock = styled.div<IsDesktop>`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 48px;
+export const WellCommTalkWrapper = styled.div<IsDesktop>`
+  position: relative;
+  min-height: 270px;
 
-  font-weight: 400;
-  font-size: 36px;
-  line-height: 48px;
-
-  b {
-    font-weight: 800;
+  img {
+    object-fit: cover;
   }
 
   ${({isDesktop}) =>
     isDesktop &&
     css`
-      margin-bottom: 72px;
-      font-size: 60px;
-      line-height: 74px;
+      width: 384px;
+      height: 468px;
+    `}
+`;
+
+export const SignForm = styled.form<IsDesktop>`
+  padding: 20px;
+  background: ${colors.GRAY50};
+  border-radius: 12px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  ${({isDesktop}) =>
+    isDesktop &&
+    css`
+      width: 426px;
+      padding: 24px;
     `}
 `;
 
@@ -126,14 +138,14 @@ export const LoginInqueryText = styled.p<IsDesktop>`
   line-height: 20px;
   letter-spacing: -0.2px;
   color: ${colors.GRAY400};
-  margin-top: 16px;
+  margin-top: -20px;
+  white-space: pre-wrap;
 
   ${({isDesktop}) =>
     isDesktop &&
     css`
       font-size: 16px;
       line-height: 24px;
-      text-align: center;
       letter-spacing: -0.3px;
     `}
 `;
