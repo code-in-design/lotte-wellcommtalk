@@ -4,19 +4,21 @@ import {css} from '@emotion/react';
 import styled from '@emotion/styled';
 
 export const Section3Container = styled.div`
-  background: ${colors.PINK};
+  background: ${colors.BLUE};
 `;
 
 export const Section3Text = styled.p<IsDesktop>`
   white-space: pre-wrap;
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 20px;
+  line-height: 36px;
   text-align: center;
   letter-spacing: -0.4px;
+  color: ${colors.WHITE};
 
   b {
     position: relative;
     font-weight: 800;
+    color: ${colors.YELLOW};
 
     img {
       position: absolute;
@@ -28,16 +30,16 @@ export const Section3Text = styled.p<IsDesktop>`
   ${({isDesktop}) =>
     isDesktop &&
     css`
-      white-space: unset;
-
-      font-size: 42px;
+      font-size: 34px;
       line-height: 64px;
+      text-align: center;
       letter-spacing: -0.6px;
 
       b {
         img {
           position: absolute;
           right: -48px;
+          top: -2px;
         }
       }
     `}
