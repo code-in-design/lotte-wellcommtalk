@@ -46,7 +46,7 @@ const Section2 = ({isDesktop}: IsDesktop) => {
         <Section2Button
           isDesktop={isDesktop}
           href="https://www.lottewellfood.com/invest/ir ">
-          IR 자료 보러가기 (Cilck)
+          IR 자료 보러가기 (click)
         </Section2Button>
       </SectionBlock>
     </Section2Container>
