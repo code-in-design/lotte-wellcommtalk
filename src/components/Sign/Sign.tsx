@@ -116,6 +116,9 @@ const Sign = ({isLogin, isDesktop}: LoginProps) => {
               {
                 '※ 통합 사번 확인이 어려운 경우 각 지원담당에게 문의해\n주시기 바랍니다.'
               }
+              {
+                '\n※ 사번이 0으로 시작하는 경우 0 제외 후 입력해 주시기 바랍니다.'
+              }
             </LoginInqueryText>
           )}
         </SignForm>
